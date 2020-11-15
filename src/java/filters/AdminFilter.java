@@ -40,7 +40,7 @@ public class AdminFilter implements Filter {
       
       AccountService account =new AccountService();
       User user = account.get(email);
-      if(user.getRole().getRoleId() != 1){
+      if(user.getRole().getRoleId() != 1 && user.getActive()==true){
      HttpServletResponse httpResponse =(HttpServletResponse) response;
       httpResponse.sendRedirect("notes");
       return;
