@@ -39,7 +39,7 @@ public class AdminFilter implements Filter {
       String email= (String) session.getAttribute("email");
       
       AccountService account =new AccountService();
-      User user = account.get(email);
+      User user = account.getAccount(email);
       if(user.getRole().getRoleId() != 1 && user.getActive()==true){
      HttpServletResponse httpResponse =(HttpServletResponse) response;
       httpResponse.sendRedirect("notes");

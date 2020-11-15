@@ -19,8 +19,13 @@ public class AccountService {
         return null;
     }
 
-    public User get(String email) {
+    public User getAccount(String email) {
+        try{
        User user = userDB.get(email);
         return user;
+        }
+        catch(Exception e){
+         return null;
+        }
     }
 }
