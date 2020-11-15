@@ -4,9 +4,9 @@ import dataaccess.UserDB;
 import models.User;
 
 public class AccountService {
-    
+    UserDB userDB = new UserDB();
     public User login(String email, String password) {
-        UserDB userDB = new UserDB();
+        
         
         try {
             User user = userDB.get(email);
@@ -17,5 +17,10 @@ public class AccountService {
         }
         
         return null;
+    }
+
+    public User get(String email) {
+       User user = userDB.get(email);
+        return user;
     }
 }
